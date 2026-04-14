@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { visibleDomains, domains } from "@/lib/domains";
@@ -8,7 +8,27 @@ import { visibleDomains, domains } from "@/lib/domains";
 export default function HomePage() {
   const [name, setName] = useState("");
   const [selectedTld, setSelectedTld] = useState(visibleDomains[0]?.tld || "");
+  const [tldOpen, setTldOpen] = useState(false);
+  const [tldSearch, setTldSearch] = useState("");
+  const tldRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
+
+  const filteredDomains = tldSearch.trim()
+    ? domains.filter((d) =>
+        d.tld.toLowerCase().includes(tldSearch.trim().toLowerCase())
+      )
+    : domains;
+
+  useEffect(() => {
+    function handleClickOutside(e: MouseEvent) {
+      if (tldRef.current && !tldRef.current.contains(e.target as Node)) {
+        setTldOpen(false);
+        setTldSearch("");
+      }
+    }
+    if (tldOpen) document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [tldOpen]);
 
   function handleCheck(e: React.FormEvent) {
     e.preventDefault();
@@ -38,15 +58,62 @@ export default function HomePage() {
             placeholder="Search for a domain"
             className="flex-1 px-4 py-3 bg-transparent focus:outline-none text-lg"
           />
-          <select
-            value={selectedTld}
-            onChange={(e) => setSelectedTld(e.target.value)}
-            className="px-4 py-3 rounded-xl bg-[var(--background)] border border-[var(--card-border)] focus:outline-none cursor-pointer"
-          >
-            {domains.map((d) => (
-              <option key={d.tld} value={d.tld}>{d.tld}</option>
-            ))}
-          </select>
+          <div ref={tldRef} className="relative">
+            <button
+              type="button"
+              onClick={() => {
+                setTldOpen((o) => !o);
+                setTldSearch("");
+              }}
+              className="flex items-center gap-2 px-4 py-3 rounded-xl bg-[var(--background)] border border-[var(--card-border)] focus:outline-none cursor-pointer whitespace-nowrap w-full sm:w-auto"
+            >
+              <span>{selectedTld}</span>
+              <svg
+                className={`w-4 h-4 text-[var(--muted)] transition-transform ${tldOpen ? "rotate-180" : ""}`}
+                fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {tldOpen && (
+              <div className="absolute right-0 bottom-full mb-2 z-50 w-52 rounded-xl bg-[var(--card)] border border-[var(--card-border)] shadow-lg overflow-hidden">
+                <div className="p-2 border-b border-[var(--card-border)]">
+                  <input
+                    autoFocus
+                    type="text"
+                    value={tldSearch}
+                    onChange={(e) => setTldSearch(e.target.value)}
+                    placeholder="Search extensions…"
+                    className="w-full px-3 py-2 rounded-lg bg-[var(--background)] text-sm focus:outline-none border border-[var(--card-border)]"
+                  />
+                </div>
+                <ul className="max-h-52 overflow-y-auto">
+                  {filteredDomains.length > 0 ? (
+                    filteredDomains.map((d) => (
+                      <li key={d.tld}>
+                        <button
+                          type="button"
+                          onClick={() => {
+                            setSelectedTld(d.tld);
+                            setTldOpen(false);
+                            setTldSearch("");
+                          }}
+                          className={`w-full text-left px-4 py-2 text-sm hover:bg-[var(--background)] transition-colors ${
+                            d.tld === selectedTld ? "text-[var(--accent)] font-medium" : ""
+                          }`}
+                        >
+                          {d.tld}
+                        </button>
+                      </li>
+                    ))
+                  ) : (
+                    <li className="px-4 py-3 text-sm text-[var(--muted)]">No matches</li>
+                  )}
+                </ul>
+              </div>
+            )}
+          </div>
           <button
             type="submit"
             disabled={!name.trim()}

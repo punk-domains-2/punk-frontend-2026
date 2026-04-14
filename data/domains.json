@@ -1,0 +1,46 @@
+{
+  ".arbitrum": {
+    "chainId": 42161,
+    "chainName": "Arbitrum",
+    "address": "0x337EB5061943ECd247649d58D35Dbab0b40D67E0",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".smol": {
+    "chainId": 42161,
+    "chainName": "Arbitrum",
+    "address": "0xE0d972817e94c5FF9BDc49a63d8927A0bA833E4f",  
+    "minter": "0x08114885E510e33995F40f00735FA532a7391024",
+    "differentPrices": 1,
+    "currency": "MAGIC",
+    "currencyAddress": "0x539bde0d7dbd336b79148aa742883198bbf60342",
+    "show": true,
+    "website": ""
+  },
+  ".degen": {
+    "chainId": 666666666,
+    "chainName": "Degen Chain",
+    "address": "0x4087fb91A1fBdef05761C02714335D232a2Bf3a1",
+    "minter": "0x1f8cf0bc042308677838fB50f264992A4e783610",
+    "differentPrices": 5,
+    "currency": "DEGEN",
+    "currencyAddress": "",
+    "show": true,
+    "website": "https://degenname.lol"
+  },
+  ".flr": {
+    "chainId": 14,
+    "chainName": "Flare",
+    "address": "0xBDACF94dDCAB51c39c2dD50BffEe60Bb8021949a",
+    "minter": "0x30E89295b9C73Ee9A74003FbcAAd67054434330F",
+    "differentPrices": 5,
+    "currency": "FLR",
+    "currencyAddress": "",
+    "show": true,
+    "website": "https://flr.domains"
+  }
+}

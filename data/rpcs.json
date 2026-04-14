@@ -1,0 +1,19 @@
+{
+  "1": ["https://eth.drpc.org", "https://rpc.mevblocker.io", "https://eth.meowrpc.com"],
+  "14": ["https://rpc.ankr.com/flare", "https://flare.rpc.thirdweb.com", "https://flare-api.flare.network/ext/C/rpc"],
+  "100": ["https://rpc.gnosischain.com", "https://gnosis.drpc.org", "https://1rpc.io/gnosis"],
+  "324": ["https://mainnet.era.zksync.io", "https://zksync.drpc.org", "https://1rpc.io/zksync2-era", "https://rpc.ankr.com/zksync_era"],
+  "8453": ["https://mainnet.base.org", "https://base.meowrpc.com", "https://base.drpc.org"],
+  "534352": ["https://rpc.scroll.io", "https://scroll.drpc.org", "https://1rpc.io/scroll"],
+  "59144": ["https://rpc.linea.build", "https://1rpc.io/linea", "https://linea.drpc.org"],
+  "81457": ["https://rpc.blast.io", "https://blast.drpc.org", "https://blast-public.nodies.app"],
+  "666666666": ["https://rpc.degen.tips"],
+  "167000": ["https://rpc.taiko.xyz", "https://rpc.ankr.com/taiko", "https://taiko.drpc.org"],
+  "55244": ["https://rpc.superposition.so"],
+  "19": ["https://songbird-api.flare.network/ext/C/rpc", "https://rpc.au.cc/songbird"],
+  "10": ["https://mainnet.optimism.io", "https://1rpc.io/op", "https://optimism.drpc.org", "https://public-op-mainnet.fastnode.io"],
+  "137": ["https://1rpc.io/matic", "https://polygon.drpc.org", "https://poly.api.pocket.network", "https://polygon-rpc.com"],
+  "42161": ["https://arb1.arbitrum.io/rpc", "https://arbitrum.meowrpc.com", "https://rpc.sentio.xyz/arbitrum-one", "https://arbitrum-one-public.nodies.app", "https://arb1.lava.build"],
+  "56": ["https://bsc-dataseed2.bnbchain.org", "https://bsc.api.pocket.network", "https://bsc.meowrpc.com", "https://1rpc.io/bnb"],
+  "250": ["https://rpc.fantom.network", "https://rpc2.fantom.network", "https://rpc3.fantom.network", "https://fantom.api.pocket.network", "https://1rpc.io/ftm"]
+}

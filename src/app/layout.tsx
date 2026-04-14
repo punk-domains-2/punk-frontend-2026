@@ -11,14 +11,14 @@ const impact = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://punk.domains"),
-  title: "Punk Domains",
-  description: "Mint and manage web3 domain names across multiple chains",
+  metadataBase: new URL("https://app.punk.domains"),
+  title: "Punk Domains - Permissionless Web3 Domains",
+  description: "Punk Domains is a decentralized domain name service offering a wide range of unique top-level domains powered across multiple blockchains.",
   openGraph: {
-    title: "Punk Domains",
-    description: "Mint and manage web3 domain names across multiple chains",
-    url: "https://punk.domains",
-    siteName: "Punk Domains",
+    title: "Punk Domains - Permissionless Web3 Domains",
+    description: "Punk Domains is a decentralized domain name service offering a wide range of unique top-level domains powered across multiple blockchains.",
+    url: "https://app.punk.domains",
+    siteName: "Punk Domains - Permissionless Web3 Domains",
     images: [
       {
         url: "/preview.png",
@@ -31,8 +31,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Punk Domains",
-    description: "Mint and manage web3 domain names across multiple chains",
+    title: "Punk Domains - Permissionless Web3 Domains",
+    description: "Punk Domains is a decentralized domain name service offering a wide range of unique top-level domains powered across multiple blockchains.",
     images: ["/preview.png"],
   },
   icons: {

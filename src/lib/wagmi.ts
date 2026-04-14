@@ -52,7 +52,7 @@ const allChains = [
 
 export const config = getDefaultConfig({
   appName: "Punk Domains",
-  projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID || "2e1b1f6817d1a0bce048731c0d73fa2b",
+  projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID || "your_walletconnect_project_id_here",
   chains: allChains,
   transports: Object.fromEntries(
     allChains.map((chain) => [chain.id, transportsForChain(chain.id)])

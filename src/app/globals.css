@@ -6,7 +6,7 @@
   --card: #f8f8f8;
   --card-border: #e5e5e5;
   --muted: #6b7280;
-  --accent: #8b5cf6;
+  --accent: #9055f7; /*#8b5cf6;*/
   --accent-hover: #7c3aed;
   --success: #22c55e;
   --error: #ef4444;
@@ -19,7 +19,7 @@
   --card: #16161f;
   --card-border: #2a2a3a;
   --muted: #9ca3af;
-  --accent: #a78bfa;
+  --accent: #9055f7;
   --accent-hover: #8b5cf6;
   --success: #4ade80;
   --error: #f87171;

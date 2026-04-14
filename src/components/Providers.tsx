@@ -17,8 +17,8 @@ function RainbowKitThemeWrapper({ children }: { children: ReactNode }) {
   // Use dark theme as the SSR default to match defaultTheme="dark",
   // then switch to the resolved value after hydration.
   const rkTheme = mounted && resolvedTheme === "light"
-    ? lightTheme({ accentColor: "#8b5cf6" })
-    : darkTheme({ accentColor: "#8b5cf6" });
+    ? lightTheme({ accentColor: "#9055f7" })
+    : darkTheme({ accentColor: "#9055f7" });
 
   return (
     <RainbowKitProvider theme={rkTheme}>

@@ -1,8 +1,14 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import Providers from "@/components/Providers";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "./globals.css";
+
+const impact = localFont({
+  src: "../../public/font/impact.ttf",
+  variable: "--font-impact",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://punk.domains"),
@@ -46,7 +52,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={impact.variable}>
       <body className="min-h-screen flex flex-col">
         <Providers>
           <Navbar />

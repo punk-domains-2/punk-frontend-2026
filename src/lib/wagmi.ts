@@ -3,7 +3,6 @@ import {
   braveWallet,
   injectedWallet,
   metaMaskWallet,
-  coinbaseWallet,
   rainbowWallet,
   walletConnectWallet,
 } from "@rainbow-me/rainbowkit/wallets";
@@ -53,7 +52,7 @@ const allChains = [
 
 export const config = getDefaultConfig({
   appName: "Punk Domains",
-  projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID || "punk-domains-placeholder",
+  projectId: process.env.NEXT_PUBLIC_WC_PROJECT_ID || "2e1b1f6817d1a0bce048731c0d73fa2b",
   chains: allChains,
   transports: Object.fromEntries(
     allChains.map((chain) => [chain.id, transportsForChain(chain.id)])
@@ -64,11 +63,10 @@ export const config = getDefaultConfig({
       groupName: "Popular",
       wallets: [
         braveWallet,
-        metaMaskWallet,
-        coinbaseWallet,
-        rainbowWallet,
-        walletConnectWallet,
         injectedWallet,
+        metaMaskWallet,
+        rainbowWallet,
+        walletConnectWallet
       ],
     },
   ],

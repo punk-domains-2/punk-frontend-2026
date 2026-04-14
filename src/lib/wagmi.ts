@@ -1,5 +1,13 @@
 import { getDefaultConfig } from "@rainbow-me/rainbowkit";
 import {
+  braveWallet,
+  injectedWallet,
+  metaMaskWallet,
+  coinbaseWallet,
+  rainbowWallet,
+  walletConnectWallet,
+} from "@rainbow-me/rainbowkit/wallets";
+import {
   mainnet,
   arbitrum,
   optimism,
@@ -51,6 +59,19 @@ export const config = getDefaultConfig({
     allChains.map((chain) => [chain.id, transportsForChain(chain.id)])
   ),
   ssr: true,
+  wallets: [
+    {
+      groupName: "Popular",
+      wallets: [
+        braveWallet,
+        metaMaskWallet,
+        coinbaseWallet,
+        rainbowWallet,
+        walletConnectWallet,
+        injectedWallet,
+      ],
+    },
+  ],
 });
 
 export { allChains };

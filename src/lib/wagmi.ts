@@ -57,16 +57,14 @@ export const config = getDefaultConfig({
   transports: Object.fromEntries(
     allChains.map((chain) => [chain.id, transportsForChain(chain.id)])
   ),
-  ssr: false,
+  ssr: true,
   wallets: [
     {
       groupName: "Popular",
       wallets: [
         braveWallet,
         injectedWallet,
-        metaMaskWallet,
-        rainbowWallet,
-        walletConnectWallet
+        metaMaskWallet
       ],
     },
   ],

@@ -10,6 +10,17 @@
     "show": true,
     "website": ""
   },
+  ".arbi": {
+    "chainId": 42161,
+    "chainName": "Arbitrum",
+    "address": "0xe97456E0fB121F65422F43ccbd4A07a0e269B534",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
   ".smol": {
     "chainId": 42161,
     "chainName": "Arbitrum",
@@ -18,6 +29,73 @@
     "differentPrices": 1,
     "currency": "MAGIC",
     "currencyAddress": "0x539bde0d7dbd336b79148aa742883198bbf60342",
+    "show": true,
+    "website": ""
+  },
+  ".punkangel": {
+    "chainId": 42161,
+    "chainName": "Arbitrum",
+    "address": "0xcC66213645474a7B61BAf95330D01e50789eaF4b",
+    "minter": "0xe0fBa63B2C3CCF48C2A14d0D3a29a15e4c17A1fF",
+    "differentPrices": 5,
+    "currency": "USDC.e",
+    "currencyAddress": "0xFF970A61A04b1cA14834A43f5dE4533eBDDB5CC8",
+    "currencyDecimals": 6,
+    "show": true,
+    "website": ""
+  },
+  ".ppl": {
+    "chainId": 42161,
+    "chainName": "Arbitrum",
+    "address": "0xbC9d19e5f97a572f428F7292DBf3dc182Cc05C82",
+    "minter": "0x3f6Ba1E9f76CAa569dA19ec45DB72Bb6430E45A3",
+    "differentPrices": 5,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".misie": {
+    "chainId": 42161,
+    "chainName": "Arbitrum",
+    "address": "0x526Ff108F5d422d0e1d6650E2Bc015BBE1fdb058",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".basebook": {
+    "chainId": 8453,
+    "chainName": "Base",
+    "address": "0x4087fb91A1fBdef05761C02714335D232a2Bf3a1",
+    "minter": "0xfc79caeAc4F44e0eBaD2bE7F42bf134806850d9e",
+    "differentPrices": 5,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".safu": {
+    "chainId": 56,
+    "chainName": "BNB Smart Chain",
+    "address": "0xBDACF94dDCAB51c39c2dD50BffEe60Bb8021949a",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "BNB",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".huwa": {
+    "chainId": 56,
+    "chainName": "BNB Smart Chain",
+    "address": "0xeFBE0b46649B7A0F1e1D49CCa98aD9CF6bcFB096",
+    "minter": "0xA8221890768603210c1a32d88374111084E46E6d",
+    "differentPrices": 1,
+    "currency": "HUWA",
+    "currencyAddress": "0x03a2A7E95eCe3112b8d33F9bCC21F0c9BA843e35",
     "show": true,
     "website": ""
   },
@@ -30,7 +108,7 @@
     "currency": "DEGEN",
     "currencyAddress": "",
     "show": true,
-    "website": "https://degenname.lol"
+    "website": ""
   },
   ".flr": {
     "chainId": 14,
@@ -41,6 +119,138 @@
     "currency": "FLR",
     "currencyAddress": "",
     "show": true,
-    "website": "https://flr.domains"
+    "website": ""
+  },
+  ".gnosis": {
+    "chainId": 100,
+    "chainName": "Gnosis Chain",
+    "address": "0xC3E8922657686EC63eaaa9FC1Fe06826802e7e0f",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "XDAI",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".xdai": {
+    "chainId": 100,
+    "chainName": "Gnosis Chain",
+    "address": "0xbca24d86e4ad1e011278faefc4ff191a731411ec",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "XDAI",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".giveth": {
+    "chainId": 100,
+    "chainName": "Gnosis Chain",
+    "address": "0xEEa3e593CDAf9D18780f9D58BAD142AF6Bd9522a",
+    "minter": "0xff56cC27Af976A4A14a0075955037444b6cf08AC",
+    "differentPrices": 5,
+    "currency": "XDAI",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".wagmi": {
+    "chainId": 10,
+    "chainName": "Optimism",
+    "address": "0xC3E8922657686EC63eaaa9FC1Fe06826802e7e0f",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".optimism": {
+    "chainId": 10,
+    "chainName": "Optimism",
+    "address": "0xBca24d86e4Ad1e011278FaEFc4fF191a731411EC",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".spartan": {
+    "chainId": 10,
+    "chainName": "Optimism",
+    "address": "0x3490C9817C45A2a394b11A3807f58a8325235aE0",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".l2": {
+    "chainId": 10,
+    "chainName": "Optimism",
+    "address": "0x9A7657d1593032C75d70950707870c3cC7ca45DC",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".op": {
+    "chainId": 10,
+    "chainName": "Optimism",
+    "address": "0xC16aCAdf99E4540E6f4E6Da816fd6D2A2C6E1d4F",
+    "minter": "0x1c7cCF4057C04Fd4feA4b1a8b0484770569BBbe4",
+    "differentPrices": 5,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".pool": {
+    "chainId": 10,
+    "chainName": "Optimism",
+    "address": "0xf2C9E463592BD440f0D422E944E5F95c79404586",
+    "minter": "0x77AE10Dd2E7Fc7b2819602D483765D705E9B8DDA",
+    "differentPrices": 5,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".ape": {
+    "chainId": 137,
+    "chainName": "Polygon",
+    "address": "0x794a8390D94E32b086908D2bA9D66300aA163C62",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "POL",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  },
+  ".poly": {
+    "chainId": 137,
+    "chainName": "Polygon",
+    "address": "0x70Ac07C50131b7bb2c8Bd9466D8d2add30B7759f",
+    "minter": "",
+    "differentPrices": 1,
+    "currency": "POL",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
+  }, 
+  ".sgb": {
+    "chainId": 19,
+    "chainName": "Songbird",
+    "address": "0xBDACF94dDCAB51c39c2dD50BffEe60Bb8021949a",
+    "minter": "0xfc11eD2F6eF562C870B55C1755182Cf5EBDbd160",
+    "differentPrices": 5,
+    "currency": "SGB",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
   }
 }

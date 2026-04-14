@@ -12,6 +12,7 @@ export interface DomainConfig {
   differentPrices: number;
   currency: string;
   currencyAddress: `0x${string}` | "";
+  currencyDecimals: number;
   show: boolean;
   website: string;
 }
@@ -24,6 +25,7 @@ const raw = domainsData as Record<string, {
   differentPrices: number;
   currency: string;
   currencyAddress: string;
+  currencyDecimals?: number;
   show: boolean;
   website: string;
 }>;
@@ -38,6 +40,7 @@ export const domains: DomainConfig[] = Object.entries(raw).map(([key, val]) => (
   differentPrices: val.differentPrices,
   currency: val.currency,
   currencyAddress: (val.currencyAddress || "") as `0x${string}` | "",
+  currencyDecimals: val.currencyDecimals ?? 18,
   show: val.show,
   website: val.website,
 }));

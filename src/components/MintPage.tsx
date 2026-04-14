@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useAccount, useSwitchChain, useBalance, useReadContract } from "wagmi";
-import { formatEther } from "viem";
+import { formatUnits } from "viem";
 import { useSearchParams } from "next/navigation";
 import { type DomainConfig, hasErc20Payment } from "@/lib/domains";
 import { erc20Abi } from "@/lib/contracts";
@@ -164,7 +164,7 @@ export default function MintPage({ domain }: { domain: DomainConfig }) {
                     {price !== undefined && (
                       <div className="flex justify-between items-center p-4 rounded-xl bg-[var(--background)] border border-[var(--card-border)]">
                         <span className="text-[var(--muted)]">Price</span>
-                        <span className="font-bold">{formatEther(price)} {domain.currency}</span>
+                        <span className="font-bold">{formatUnits(price, domain.currencyDecimals)} {domain.currency}</span>
                       </div>
                     )}
 

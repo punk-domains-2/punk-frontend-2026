@@ -252,5 +252,27 @@
     "currencyAddress": "",
     "show": true,
     "website": ""
+  }, 
+  ".meow": {
+    "chainId": 55244,
+    "chainName": "Superposition",
+    "address": "0x4087fb91A1fBdef05761C02714335D232a2Bf3a1",
+    "minter": "0x7aa8597134eAb3259F4D7d08a09ff69EDf73DdFf",
+    "differentPrices": 5,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": "https://meow.domains"
+  }, 
+  ".zksoul": {
+    "chainId": 324,
+    "chainName": "ZKsync",
+    "address": "0xe36507aD67Ac0aE6D27D22b407A9338b136315df",
+    "minter": "0x4398CaB92eE1143265b65d46fAb278c0AfF50252",
+    "differentPrices": 5,
+    "currency": "ETH",
+    "currencyAddress": "",
+    "show": true,
+    "website": ""
   }
 }

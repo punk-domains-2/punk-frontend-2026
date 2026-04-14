@@ -10,6 +10,69 @@ import { resolverAbi } from "@/lib/contracts";
 import { getResolverAddress } from "@/lib/domains";
 import { getPreferredDomainKey, cacheGet } from "@/lib/cache";
 
+const WalletIcon = () => (
+  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+  </svg>
+);
+
+function MobileWalletButton() {
+  return (
+    <ConnectButton.Custom>
+      {({ account, chain, openAccountModal, openConnectModal, mounted }) => {
+        const ready = mounted;
+        const connected = ready && account && chain;
+        return (
+          <div
+            className="md:hidden"
+            {...(!ready && { "aria-hidden": true, style: { opacity: 0, pointerEvents: "none", userSelect: "none" } })}
+          >
+            <button
+              onClick={connected ? openAccountModal : openConnectModal}
+              className="p-2 rounded-lg hover:bg-[var(--card)] transition-colors"
+              aria-label={connected ? "Open account" : "Connect wallet"}
+            >
+              <WalletIcon />
+            </button>
+          </div>
+        );
+      }}
+    </ConnectButton.Custom>
+  );
+}
+
+function MobileChainSwitcher({ onSelect }: { onSelect: () => void }) {
+  return (
+    <ConnectButton.Custom>
+      {({ account, chain, openChainModal, mounted }) => {
+        const ready = mounted;
+        const connected = ready && account && chain;
+        if (!connected) return null;
+        return (
+          <button
+            onClick={() => { openChainModal(); onSelect(); }}
+            className="flex items-center gap-2 py-2 text-[var(--muted)] hover:text-[var(--foreground)] transition-colors w-full"
+          >
+            {chain.hasIcon && chain.iconUrl ? (
+              <div className="w-5 h-5 rounded-full overflow-hidden shrink-0" style={{ background: chain.iconBackground }}>
+                <img src={chain.iconUrl} alt={chain.name ?? "Chain"} className="w-5 h-5" />
+              </div>
+            ) : (
+              <svg className="w-5 h-5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+              </svg>
+            )}
+            <span className="text-sm">{chain.name ?? "Switch Network"}</span>
+            <svg className="w-4 h-4 ml-auto shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" />
+            </svg>
+          </button>
+        );
+      }}
+    </ConnectButton.Custom>
+  );
+}
+
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
@@ -92,8 +155,16 @@ export default function Navbar() {
 
         <div className="flex items-center gap-3">
           <UserDomainName />
-          <ThemeToggle />
-          <ConnectButton showBalance={false} chainStatus="icon" accountStatus="avatar" />
+          {/* Theme toggle: desktop only */}
+          <div className="hidden md:block">
+            <ThemeToggle />
+          </div>
+          {/* Full connect button: desktop only */}
+          <div className="hidden md:block">
+            <ConnectButton showBalance={false} chainStatus="icon" accountStatus="avatar" />
+          </div>
+          {/* Wallet icon button: mobile only */}
+          <MobileWalletButton />
           <button
             className="md:hidden p-2 rounded-lg hover:bg-[var(--card)] transition-colors"
             onClick={() => setMenuOpen(!menuOpen)}
@@ -122,6 +193,13 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
+          <div className="border-t border-[var(--card-border)] pt-3 mt-1 space-y-1">
+            <MobileChainSwitcher onSelect={() => setMenuOpen(false)} />
+            <div className="flex items-center gap-2 py-1">
+              <ThemeToggle />
+              <span className="text-sm text-[var(--muted)]">Toggle theme</span>
+            </div>
+          </div>
         </div>
       )}
     </nav>

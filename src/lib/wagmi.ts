@@ -57,7 +57,7 @@ export const config = getDefaultConfig({
   transports: Object.fromEntries(
     allChains.map((chain) => [chain.id, transportsForChain(chain.id)])
   ),
-  ssr: true,
+  ssr: false,
   wallets: [
     {
       groupName: "Popular",

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { ConnectButton } from "@rainbow-me/rainbowkit";
 import { useAccount, useReadContract } from "wagmi";
 import { useTheme } from "next-themes";
@@ -74,8 +75,8 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 backdrop-blur-md bg-[var(--background)]/80 border-b border-[var(--card-border)]">
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between gap-4">
-        <Link href="/" className="text-xl font-bold shrink-0">
-          <span className="text-[var(--accent)]">Punk</span> Domains
+        <Link href="/" className="shrink-0">
+          <Image src="/logo.svg" alt="Punk Domains" width={140} height={26} priority />
         </Link>
 
         <div className="hidden md:flex items-center gap-6">

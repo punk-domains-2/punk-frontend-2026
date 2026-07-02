@@ -1,0 +1,32 @@
+steps:
+  - name: node:24
+    id: install
+    entrypoint: npm
+    args: ["ci", "--ignore-scripts"]
+
+  - name: node:24
+    id: build
+    entrypoint: npm
+    args: ["run", "build"]
+    secretEnv:
+      - NEXT_PUBLIC_WC_PROJECT_ID
+    waitFor: ["install"]
+
+  - name: gcr.io/cloud-builders/gcloud
+    id: deploy
+    args:
+      - app
+      - deploy
+      - app.yaml
+      - --quiet
+    waitFor: ["build"]
+
+timeout: 1200s
+
+availableSecrets:
+  secretManager:
+    - versionName: projects/$PROJECT_ID/secrets/NEXT_PUBLIC_WC_PROJECT_ID/versions/latest
+      env: NEXT_PUBLIC_WC_PROJECT_ID
+
+options:
+  logging: CLOUD_LOGGING_ONLY

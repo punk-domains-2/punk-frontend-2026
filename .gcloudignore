@@ -1,0 +1,32 @@
+# This file specifies files that are *not* uploaded to Google Cloud
+# using gcloud. It follows the same syntax as .gitignore.
+
+.git
+.gitignore
+.github/
+
+# Dependencies are installed on App Engine during deployment
+node_modules/
+
+# Local env files
+.env
+.env.*
+!.env.example
+
+# Dev / build tooling (out/ is required after build)
+.next/
+src/
+tsconfig.json
+postcss.config.mjs
+
+# Docker (not used by App Engine Standard)
+Dockerfile
+docker-compose.yml
+docker-compose.yaml
+nginx.conf
+
+# Other hosting configs
+netlify.toml
+
+# Documentation
+README.md

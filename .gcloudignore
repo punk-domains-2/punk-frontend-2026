@@ -13,11 +13,8 @@ node_modules/
 .env.*
 !.env.example
 
-# Dev / build tooling (out/ is required after build)
+# Next.js build cache (rebuilt during deploy)
 .next/
-src/
-tsconfig.json
-postcss.config.mjs
 
 # Docker (not used by App Engine Standard)
 Dockerfile

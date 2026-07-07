@@ -130,6 +130,7 @@ export default function Navbar() {
 
   const links = [
     { href: "/", label: "Home" },
+    { href: "/domain/search", label: "Search" },
     { href: "/dashboard", label: "Dashboard" },
     { href: "/send", label: "Send" },
     { href: "/settings", label: "Settings" },

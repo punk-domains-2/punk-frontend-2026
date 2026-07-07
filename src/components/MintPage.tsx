@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { useAccount, useSwitchChain, useBalance, useReadContract } from "wagmi";
 import { formatUnits } from "viem";
+import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { type DomainConfig, hasErc20Payment } from "@/lib/domains";
 import { erc20Abi } from "@/lib/contracts";
@@ -142,8 +143,14 @@ export default function MintPage({ domain }: { domain: DomainConfig }) {
               <div className="text-center py-4 text-[var(--muted)]">Checking...</div>
             ) : isTaken ? (
               <div className="space-y-3">
-                <div className="p-4 rounded-xl bg-[var(--error)]/10 border border-[var(--error)]/20 text-center">
+                <div className="p-4 rounded-xl bg-[var(--error)]/10 border border-[var(--error)]/20 text-center space-y-2">
                   <p className="text-[var(--error)] font-medium">{cleanName}{domain.tld} is taken</p>
+                  <Link
+                    href={`/domain/search?q=${encodeURIComponent(cleanName + domain.tld)}`}
+                    className="text-sm text-[var(--accent)] hover:underline"
+                  >
+                    View domain details
+                  </Link>
                 </div>
                 <button onClick={handleReset} className="w-full py-3 rounded-xl border border-[var(--card-border)] hover:bg-[var(--card)] transition-colors">
                   Try another name
